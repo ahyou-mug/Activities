@@ -1,0 +1,7 @@
+C:\Users\Local user\source\repos\ConsoleApp1\bin\Debug\BIT502-Activites.exe.config
+C:\Users\Local user\source\repos\ConsoleApp1\bin\Debug\BIT502-Activites.exe
+C:\Users\Local user\source\repos\ConsoleApp1\bin\Debug\BIT502-Activites.pdb
+C:\Users\Local user\source\repos\ConsoleApp1\obj\Debug\BIT502-Activities.csprojAssemblyReference.cache
+C:\Users\Local user\source\repos\ConsoleApp1\obj\Debug\BIT502-Activities.csproj.CoreCompileInputs.cache
+C:\Users\Local user\source\repos\ConsoleApp1\obj\Debug\BIT502-Activites.exe
+C:\Users\Local user\source\repos\ConsoleApp1\obj\Debug\BIT502-Activites.pdb
