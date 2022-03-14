@@ -17,7 +17,6 @@ namespace bIT502Activities
             Console.WriteLine(value: $"Area of a circle with radius " + radius + " is - " + area + "\n\n");
             Console.WriteLine("Press any key to continue..");
             Console.ReadKey();
-            Program.Main();
         }
 
         static void StringActivity()
@@ -31,7 +30,6 @@ namespace bIT502Activities
             Console.WriteLine(value: $"You think it's funny to say '{extra}'? Yeah well you're a turd.");
             Console.WriteLine("Press any key to continue..");
             Console.ReadKey();
-            Program.Main();
         }
 
         static void PasswordChecker()
@@ -46,6 +44,28 @@ namespace bIT502Activities
             Program.Main();
         }
 
+        static void Temperature()
+            {
+                Console.Write("Please input a temperature: ");
+                double temp1 = double.Parse(Console.ReadLine());
+                Console.Write("(1) to conver to farenheight (2) to convert to celsius: ");
+                int select = int.Parse(Console.ReadLine());
+                if (select == 1)
+                {
+                    double farenheight = temp1 * (9.0 / 5.0) + 32;
+                    Console.WriteLine("Farenheight temp  is " + farenheight);
+                }
+                else if (select == 2)
+                {
+                    double celsius = temp1 - 32 * (9.0/5.0);
+                    Console.WriteLine("Celsius temp  is " + celsius);
+                }
+                else
+                {
+                    return;
+                }
+            }
+
         static void Main()
         {
             bool runTime = true;
@@ -57,6 +77,7 @@ namespace bIT502Activities
                 Console.WriteLine("1) to calculate the area of a circle");
                 Console.WriteLine("2) to play with strings");
                 Console.WriteLine("3) to check passwords (read: play with strings more)");
+                Console.WriteLine("4) to convert temperatures");
                 int opt = int.Parse(Console.ReadLine());
                 if (opt == 0)
                 {
@@ -74,22 +95,26 @@ namespace bIT502Activities
                 {
                     PasswordChecker();
                 }
+                else if (opt == 4)
+                {
+                    Temperature();
+                }
                 else
                 {
-                    if (opt == 0)
-                    {
-                        runTime = false;
-                    }
-                    else
+                    if (opt != 0)
                     {
                         Console.Write("That selection is invalid, please try again: ");
                         opt = int.Parse(Console.ReadLine());
+                    }
+                    else
+                    {
+                        runTime = false;
                     }
                 }
             }
         }
     }
 }
-// Added password activity
-// sorted boolean logic
-// improved exit function
+// Added temperatures
+// improved boolean logic
+// fixed exit error
