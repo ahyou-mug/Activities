@@ -8,6 +8,7 @@ namespace bIT502Activities
 {
     public class Program
     {
+        
         static void CircleArea()
         {
             const double pi = 3.14159265359;
@@ -66,6 +67,18 @@ namespace bIT502Activities
                 }
             }
 
+        static void AgePredict()
+            {
+                Console.Write("Please input your age: ");
+                int age = int.Parse(Console.ReadLine());
+                Console.Write("Enter a year to find out your age: ");
+                int userYear = int.Parse(Console.ReadLine());
+                int present = DateTime.Now.Year;
+                age = age + (userYear - present);
+                Console.WriteLine(value: $"In the year {userYear} you will be {age}");
+            }
+
+
         static void Main()
         {
             bool runTime = true;
@@ -78,6 +91,7 @@ namespace bIT502Activities
                 Console.WriteLine("2) to play with strings");
                 Console.WriteLine("3) to check passwords (read: play with strings more)");
                 Console.WriteLine("4) to convert temperatures");
+                Console.WriteLine("5) to predict future ages");
                 int opt = int.Parse(Console.ReadLine());
                 if (opt == 0)
                 {
@@ -99,6 +113,10 @@ namespace bIT502Activities
                 {
                     Temperature();
                 }
+                else if (opt == 5)
+                {
+                    AgePredict();
+                }
                 else
                 {
                     if (opt != 0)
@@ -115,6 +133,4 @@ namespace bIT502Activities
         }
     }
 }
-// Added temperatures
-// improved boolean logic
-// fixed exit error
+// Added age activity
