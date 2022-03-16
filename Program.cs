@@ -11,6 +11,7 @@ namespace bIT502Activities
         
         static void CircleArea()
         {
+            Console.Clear();
             const double pi = 3.14159265359;
             Console.Write("Please input the radius of the circle: ");
             int radius = int.Parse(Console.ReadLine());
@@ -22,6 +23,7 @@ namespace bIT502Activities
 
         static void StringActivity()
         {
+            Console.Clear();
             const string myName = "Tony Hart";
             Console.WriteLine($"My name is {myName}");
             Console.Write("Write something funny: ");
@@ -35,6 +37,7 @@ namespace bIT502Activities
 
         static void PasswordChecker()
         {
+            Console.Clear();
             Console.WriteLine("Password Checker");
             Console.WriteLine("Enter your password. It must contain at least 8 characters and the character a.");
             String name = Console.ReadLine();  // read a string (password) from the screen
@@ -47,6 +50,7 @@ namespace bIT502Activities
 
         static void Temperature()
             {
+                Console.Clear();
                 Console.Write("Please input a temperature: ");
                 double temp1 = double.Parse(Console.ReadLine());
                 Console.Write("(1) to conver to farenheight (2) to convert to celsius: ");
@@ -69,6 +73,7 @@ namespace bIT502Activities
 
         static void AgePredict()
             {
+                Console.Clear();
                 Console.Write("Please input your age: ");
                 int age = int.Parse(Console.ReadLine());
                 Console.Write("Enter a year to find out your age: ");
@@ -80,6 +85,7 @@ namespace bIT502Activities
 
         static void Calculator()
             {
+                Console.Clear();
                 int cont = 1;
                 int firstNum;
                 int secondNum;
@@ -148,7 +154,38 @@ namespace bIT502Activities
                 }
             }
 
-
+        static void FortuneTeller()
+        {
+            Console.Clear();
+            string[] careers = {"doctor", "prostitute/gigolo", "retail staff", "manager", "drug dealer", "IT professional", "taxi driver", "cult leader", "professional student", "beggar", "entrepreneur", "dog walker", "camgirl/guy"};
+            Console.Write("What is your name? ");
+            string uName = Console.ReadLine();
+            Console.Write("How old are you? ");
+            int uAge = int.Parse(Console.ReadLine());
+            Console.Write("What is your bank account balance? ");
+            int uMoneys = int.Parse(Console.ReadLine());
+            Console.Write("Are you happy? ");
+            string answer = Console.ReadLine();
+            Random rnd = new Random(); // Assigns System.Rand to variable to generate random numbers later
+            uMoneys = uMoneys + rnd.Next(0,(uMoneys*50));
+            int uDeath = rnd.Next(uAge, 90);
+            int deathYear = DateTime.Now.Year + uDeath;
+            int num = rnd.Next(1,uMoneys);
+            Console.WriteLine(value: $"You will have {uMoneys} dollars");
+            Console.WriteLine(value: $"You wll die in {deathYear} at age {uDeath}");
+            int index = rnd.Next(careers.Length);
+            Console.WriteLine(value: $"Your primary career will be {careers[index]}");
+            if ((num % 3) == 0)
+            {
+                Console.WriteLine("You will die fulfilled.");
+            }
+            else
+            {
+                Console.WriteLine(value: $"You will die unfulfilled with {num%3} tasks considered unfinished.");
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
 
         static void Main()
         {
@@ -157,6 +194,7 @@ namespace bIT502Activities
             // Main loop - exits when user enters 0
             while (runTime == true)
             {
+                Console.Clear();
                 Console.WriteLine("0) to Exit");
                 Console.WriteLine("1) to calculate the area of a circle");
                 Console.WriteLine("2) to play with strings");
@@ -164,6 +202,7 @@ namespace bIT502Activities
                 Console.WriteLine("4) to convert temperatures");
                 Console.WriteLine("5) to predict future ages");
                 Console.WriteLine("6) to use the calculator");
+                Console.WriteLine("7) to have your fortune told");
                 int opt = int.Parse(Console.ReadLine());
                 if (opt == 0)
                 {
@@ -193,6 +232,10 @@ namespace bIT502Activities
                 {
                     Calculator();
                 }
+                else if (opt == 7)
+                {
+                    FortuneTeller();
+                }
                 else
                 {
                     if (opt != 0)
@@ -209,5 +252,4 @@ namespace bIT502Activities
         }
     }
 }
-// Added calculator
-// adding bool logic to calc to run in loop and add multiple steps to calculations
+// Added FortuneTeller()
