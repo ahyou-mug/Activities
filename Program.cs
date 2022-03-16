@@ -78,6 +78,77 @@ namespace bIT502Activities
                 Console.WriteLine(value: $"In the year {userYear} you will be {age}");
             }
 
+        static void Calculator()
+            {
+                int cont = 1;
+                int firstNum;
+                int secondNum;
+                int calc;
+                int sum = 0;
+                while (cont > 0)
+                {
+                    if (cont == 2)
+                    {
+                        Console.Write("0) for main menu, 1) add, 2) subtract, 3) multiply, 4) divide, 5) to find a remainder: ");
+                        calc = int.Parse(Console.ReadLine());
+                        if (calc == 0)
+                        { 
+                            cont = 0; 
+                        }
+                        Console.Write("Please enter a number to perform the operation on your previous sum and press enter: ");
+                        secondNum = int.Parse(Console.ReadLine());   // read second number
+                        firstNum = sum;
+                    }
+                    else
+                    {
+                        Console.Write("0) for main menu, 1) add, 2) subtract, 3) multiply, 4) divide, 5) to find a remainder: ");
+                        calc = int.Parse(Console.ReadLine()); // read action to perform
+                        if (calc == 0)
+                        { 
+                            cont = 0; 
+                        }
+                        Console.Write("Please type the first number and press enter: ");
+                        firstNum = int.Parse(Console.ReadLine());   // read first number
+                        Console.Write("Please type the second number and press enter: ");
+                        secondNum = int.Parse(Console.ReadLine());   // read second number
+                        cont = 1;
+                    }
+                    
+
+                    if (calc == 1)
+                    {
+                        sum = firstNum + secondNum;
+                        Console.WriteLine("The sum of the two numbers is: " +sum);
+                        System.Threading.Thread.Sleep(1500);
+                    }
+                    else if (calc == 2)
+                    {
+                        sum = firstNum - secondNum;
+                        Console.WriteLine(value: $"{firstNum} minus {secondNum} is: " + sum);
+                        System.Threading.Thread.Sleep(1500);
+                    }
+                    else if (calc == 3)
+                    {
+                        sum = firstNum * secondNum;
+                        Console.WriteLine(value: $"{firstNum} multiplied by {secondNum} is: " + sum);
+                        System.Threading.Thread.Sleep(1500);
+                    }
+                    else if (calc == 4)
+                    {
+                        sum = firstNum / secondNum;
+                        Console.WriteLine(value: $"{firstNum} divided by {secondNum} is: " + sum);
+                        System.Threading.Thread.Sleep(1500);
+                    }
+                    else if (calc == 5)
+                    {
+                        sum = firstNum % secondNum;
+                        Console.WriteLine(value: $"Remainder of {firstNum} divided by {secondNum} is: " + sum);
+                        System.Threading.Thread.Sleep(1500);
+                    }
+                }
+            }
+
+
 
         static void Main()
         {
@@ -92,6 +163,7 @@ namespace bIT502Activities
                 Console.WriteLine("3) to check passwords (read: play with strings more)");
                 Console.WriteLine("4) to convert temperatures");
                 Console.WriteLine("5) to predict future ages");
+                Console.WriteLine("6) to use the calculator");
                 int opt = int.Parse(Console.ReadLine());
                 if (opt == 0)
                 {
@@ -117,6 +189,10 @@ namespace bIT502Activities
                 {
                     AgePredict();
                 }
+                else if (opt == 6)
+                {
+                    Calculator();
+                }
                 else
                 {
                     if (opt != 0)
@@ -133,4 +209,5 @@ namespace bIT502Activities
         }
     }
 }
-// Added age activity
+// Added calculator
+// adding bool logic to calc to run in loop and add multiple steps to calculations
