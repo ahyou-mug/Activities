@@ -187,6 +187,39 @@ namespace bIT502Activities
             Console.ReadKey();
         }
 
+        static void WhereDoYouLive()
+        {
+            Console.Write("Which city do you live in? ");
+            string city = Console.ReadLine();
+            switch (city)
+                {
+                case "Auckland":
+                    {
+                    Console.WriteLine("You live in the biggest city in NZ!");
+                    System.Threading.Thread.Sleep(2500);
+                    break;
+                    }
+                case "Hamilton":
+                    {
+                        Console.WriteLine("Congratulations for your entry into poo towns of NZ!!");
+                        System.Threading.Thread.Sleep(2500);
+                        break;
+                    }
+                case "Christchurch":
+                    {
+                        Console.WriteLine("Congratulations on being the most racist city in NZ!!");
+                        System.Threading.Thread.Sleep(2500);
+                        break;
+                    }    
+                default:
+                    {
+                        Console.WriteLine("I've heard it's lovely there :) ");
+                        System.Threading.Thread.Sleep(2500);
+                        break;
+                    }
+               }
+        }
+
         static void Main()
         {
             bool runTime = true;
@@ -203,6 +236,7 @@ namespace bIT502Activities
                 Console.WriteLine("5) to predict future ages");
                 Console.WriteLine("6) to use the calculator");
                 Console.WriteLine("7) to have your fortune told");
+                Console.WriteLine("8) to for where do you live (case statements)");
                 int opt = int.Parse(Console.ReadLine());
                 if (opt == 0)
                 {
@@ -235,6 +269,10 @@ namespace bIT502Activities
                 else if (opt == 7)
                 {
                     FortuneTeller();
+                }
+                else if (opt == 8)
+                {
+                    WhereDoYouLive();
                 }
                 else
                 {
