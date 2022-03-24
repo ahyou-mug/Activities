@@ -220,6 +220,33 @@ namespace bIT502Activities
                }
         }
 
+        static void NameLength()
+        {
+            Console.WriteLine("Enter your name");
+            String name = Console.ReadLine();  // read a string (name) from the screen
+            if (name.Length > 7 )
+            {
+                if (name.Contains('a'))
+                {
+                    Console.WriteLine(@"The length of your name is more than seven "
+                        +"and contains the character 'a'");
+                } else
+                {
+                    Console.WriteLine(@"The length of your name is more than seven "
+                        +"and does not contain the character 'a'");
+                }
+            }
+            else
+            {
+                Console.WriteLine(@"The length of your name is not more than seven "
+                    + "and I do not know if it contains the character 'a'");
+            }
+            Console.WriteLine("The length of my name is: " + name.Length);
+            Console.WriteLine("The name contains the character a: " + name.Contains('a'));
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
         static void Main()
         {
             bool runTime = true;
@@ -237,6 +264,7 @@ namespace bIT502Activities
                 Console.WriteLine("6) to use the calculator");
                 Console.WriteLine("7) to have your fortune told");
                 Console.WriteLine("8) to for where do you live (case statements)");
+                Console.WriteLine("9) to find out how long your name is");
                 int opt = int.Parse(Console.ReadLine());
                 if (opt == 0)
                 {
@@ -274,6 +302,10 @@ namespace bIT502Activities
                 {
                     WhereDoYouLive();
                 }
+                else if (opt == 9)
+                {
+                    NameLength();
+                }
                 else
                 {
                     if (opt != 0)
@@ -290,4 +322,5 @@ namespace bIT502Activities
         }
     }
 }
-// Added FortuneTeller()
+// Added Namelength()
+// altered it so line continuation works
