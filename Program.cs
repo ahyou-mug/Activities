@@ -251,17 +251,49 @@ namespace bIT502Activities
             {
                 Console.Write("Input an integer (whole number): ");
                 int num = int.Parse(Console.ReadLine());
+                string oddEven = num%2==0? "Even" : "Odd";
                 if (num >= -100 && num <= 50)
                 {
-                    Console.WriteLine("That number is within the range of -100 and 50");
+                    Console.WriteLine($"That number is {oddEven} and within the range of -100 and 50");
                     System.Threading.Thread.Sleep(2500);
                 }
                 else
                 {
-                    Console.WriteLine("That number is not within the range of -100 and 50");
+                    Console.WriteLine($"That number is {oddEven} and not within the range of -100 and 50");
                     System.Threading.Thread.Sleep(2500);
                 }
+                Console.Write("Input a whole number: ");
+                num = int.Parse(Console.ReadLine());
+                Console.Write("Input another whole number: ");
+                int y = int.Parse(Console.ReadLine());
+                int x = ((num-y)<0 )?((num-y)*-1):(num-y);
+                Console.WriteLine($"{num} - {y} = {num-y}. x = {x}");
+                System.Threading.Thread.Sleep(2500);
             }
+
+        static void SillyForLoop()
+            {
+                Console.WriteLine("Welcome to SillyForLoop brought to you by Open Polytechnic");
+                int k = 0; //counter
+                for (int i = 1; i < 100; i++)
+                {
+                    k++;
+                    if (k==5)
+                    {
+                        Console.WriteLine(i);
+                        k = 0;
+                    }
+                    else
+                    {
+                        Console.Write(i+"    ");
+                    }
+                }//end for loop
+                Console.WriteLine();
+                Console.WriteLine("Press any key to continue..");
+                Console.ReadKey();
+            }
+         
+           
 
         static void Main()
         {
@@ -282,6 +314,7 @@ namespace bIT502Activities
                 Console.WriteLine("8) to for where do you live (case statements)");
                 Console.WriteLine("9) to find out how long your name is");
                 Console.WriteLine("10) to test numbers using compound conditions");
+                Console.WriteLine("11) to test SillyForLoop");
                 int opt = int.Parse(Console.ReadLine());
                 if (opt == 0)
                 {
@@ -327,6 +360,10 @@ namespace bIT502Activities
                 {
                     NumTest();
                 }
+                else if (opt == 11)
+                {
+                    SillyForLoop();
+                }
                 else
                 {
                     if (opt != 0)
@@ -344,3 +381,4 @@ namespace bIT502Activities
     }
 }
 // Added NumTest()
+// learned ?: ternary operator
