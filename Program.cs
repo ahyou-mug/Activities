@@ -247,6 +247,22 @@ namespace bIT502Activities
             Console.ReadKey();
         }
 
+        static void NumTest()
+            {
+                Console.Write("Input an integer (whole number): ");
+                int num = int.Parse(Console.ReadLine());
+                if (num >= -100 && num <= 50)
+                {
+                    Console.WriteLine("That number is within the range of -100 and 50");
+                    System.Threading.Thread.Sleep(2500);
+                }
+                else
+                {
+                    Console.WriteLine("That number is not within the range of -100 and 50");
+                    System.Threading.Thread.Sleep(2500);
+                }
+            }
+
         static void Main()
         {
             bool runTime = true;
@@ -265,6 +281,7 @@ namespace bIT502Activities
                 Console.WriteLine("7) to have your fortune told");
                 Console.WriteLine("8) to for where do you live (case statements)");
                 Console.WriteLine("9) to find out how long your name is");
+                Console.WriteLine("10) to test numbers using compound conditions");
                 int opt = int.Parse(Console.ReadLine());
                 if (opt == 0)
                 {
@@ -306,6 +323,10 @@ namespace bIT502Activities
                 {
                     NameLength();
                 }
+                else if (opt == 10)
+                {
+                    NumTest();
+                }
                 else
                 {
                     if (opt != 0)
@@ -322,5 +343,4 @@ namespace bIT502Activities
         }
     }
 }
-// Added Namelength()
-// altered it so line continuation works
+// Added NumTest()
